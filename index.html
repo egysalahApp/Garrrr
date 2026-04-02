@@ -114,7 +114,6 @@
 
         const toArabicNum = (num) => String(num).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
 
-        // تم إضافة المعاني الناقصة من الملف المرفق دون حذف الأسئلة السابقة
         const appData = {
             sections: [
                 { id: 'intro', title: 'مقدمة', type: 'info' },
@@ -124,7 +123,6 @@
                     type: 'mcq',
                     description: 'اختر حرف الجر المناسب لملء الفراغِ ليعطي المعنى المطلوب بدقةٍ.',
                     questions: [
-                        // الأسئلة السابقة (١٠)
                         { id: 'f1', text: 'خاتمُ المعلمِ مصنوعٌ [ ... ] فضةٍ. <br><span class="text-lg md:text-xl text-slate-500">(بيان النوع)</span>', options: ['مِنْ', 'فِي', 'بـِ'], correct: 0, hint: 'نحتاج حرفًا يبين المادة الخام.', explanation: '(مِنْ) تستخدم لبيان النوع والمادة المصنوع منها الشيء.' },
                         { id: 'f2', text: 'السفرُ أحبُّ [ ... ] من البقاءِ. <br><span class="text-lg md:text-xl text-slate-500">(معنى عندي)</span>', options: ['إلَيَّ', 'عَلَيَّ', 'فِيَّ'], correct: 0, hint: 'نحتاج حرفًا يفيد معنى (عند) أو القرب النفسي.', explanation: '(إلَى) تستخدم أحيانًا بمعنى (عند).' },
                         { id: 'f3', text: 'أخذتُ هذا الخبر اليقين [ ... ] صديقي.', options: ['عَنْ', 'فِي', 'مِنْ'], correct: 0, hint: 'هذا الحرف يدل على الأصل والمصدر الذي صدر منه الخبر.', explanation: '(عَنْ) تُستخدم لتدل على مصدر الشيء وأصله.' },
@@ -135,7 +133,6 @@
                         { id: 'f8', text: 'أنفقتُ [ ... ] مالي في مساعدة الفقراءِ.', options: ['مِنْ', 'فِي', 'البَاء'], correct: 0, hint: 'المال المنفق هو (جزءٌ) فقط من إجمالي المال.', explanation: '(مِنْ) تُستخدم للدلالة على التبعيض.' },
                         { id: 'f9', text: 'تحدثنا طويلًا [ ... ] أهمية الوقتِ.', options: ['عَنْ', 'فِي', 'مِنْ'], correct: 0, hint: 'هذا الحرف يدل على المحور الذي دار حوله النقاش.', explanation: '(عَنْ) تُستخدم لتدل على موضوع الحديث.' },
                         { id: 'f10', text: 'ينقسم الاسم [ ... ] نكرة ومعرفة.', options: ['إلَى', 'اللَّام', 'فِي'], correct: 0, hint: 'نحتاج حرفًا يجزئ الشيء لمكوناته.', explanation: '(إلَى) تستخدم للتفصيل والتقسيم.' },
-                        // الأسئلة الجديدة (٥) لتغطية معاني الملف المرفق
                         { id: 'f11', text: 'مشيتُ [ ... ] المنزلِ إلى شاطئ البحرِ. <br><span class="text-lg md:text-xl text-slate-500">(مكان الابتداء)</span>', options: ['مِنْ', 'عَنْ', 'فِي'], correct: 0, hint: 'نقطة الانطلاق المكانية.', explanation: '(مِنْ) تفيد مكان الابتداء.' },
                         { id: 'f12', text: 'اشتكى المريضُ [ ... ] الألمِ. <br><span class="text-lg md:text-xl text-slate-500">(سبب الشيء)</span>', options: ['مِنْ', 'عَلَى', 'فِي'], correct: 0, hint: 'السبب الذي أدى للشكوى.', explanation: '(مِنْ) تأتي لتفيد سبب الشيء.' },
                         { id: 'f13', text: 'العلمُ أنفعُ [ ... ] المالِ. <br><span class="text-lg md:text-xl text-slate-500">(الربط في التفضيل)</span>', options: ['مِنْ', 'عَنْ', 'بـِ'], correct: 0, hint: 'تربط بين اسم التفضيل (أنفع) والمفضل عليه (المال).', explanation: '(مِنْ) تفيد الربط بين اسم التفضيل والمفضل عليه.' },
@@ -149,7 +146,6 @@
                     type: 'sort',
                     description: 'اسحب البطاقة أو انقر على الصندوق المناسب للمعنى الذي يؤديه الحرف الملون.',
                     items: [
-                        // الأسئلة السابقة (٧)
                         { id: 'srt1', text: 'شرعت في العمل <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">من</span> الأسبوع الماضي', options: ['زمان الابتداء', 'التبعيض', 'بيان النوع'], correct: 0, hint: 'الحرف يحدد متى بدأ زمن الفعل.', explanation: '(مِنْ) هنا حددت نقطة انطلاق الزمن.' },
                         { id: 'srt2', text: 'وصلت <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">إلى</span> المدرسة باكرًا', options: ['النهاية في المكان', 'النهاية في الزمان', 'معنى القرب'], correct: 0, hint: 'المدرسة هي محطة (الوصول) الأخيرة للحركة.', explanation: '(إلى) تفيد النهاية في المكان، التركيز هنا على النهاية والوصول.' },
                         { id: 'srt3', text: 'شرّبت الأم ولدها الدواء <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">على</span> أنه ماء', options: ['الاستعلاء المكان', 'معنى الوهم', 'الشرط'], correct: 1, hint: 'الأم صورت الدواء بشيءٍ غير حقيقيٍ لتشجع ابنها.', explanation: '(عَلَى) هنا صورت شيئًا متوهمًا غير حقيقيٍ.' },
@@ -157,7 +153,6 @@
                         { id: 'srt13', text: 'فرح محمد <span class="text-pastel-primaryDark font-black">بـ</span>قدوم أخيه', options: ['الوسيلة', 'التعويض والثمن', 'السبب والعلة'], correct: 2, hint: 'القدوم هو الدافع والعلة وراء شعور الفرح.', explanation: 'الباء هنا سببية، أي (بسبب) قدوم أخيه.' },
                         { id: 'srt6', text: 'اشتريت هذا الكتاب القيم <span class="text-pastel-primaryDark font-black">بـ</span>دينارٍ', options: ['التعويض والثمن', 'الوسيلة (معنوي)', 'الآلة (مادي)'], correct: 0, hint: 'تمت مبادلة الكتاب بمبلغٍ ماديٍ.', explanation: 'الباء تدخل على الثمن لتفيد التعويض.' },
                         { id: 'srt4', text: 'جلسنا <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">على</span> المائدة لنتناول الطعام', options: ['الاستعلاء المكان', 'القرب من الشيء', 'الشرط'], correct: 1, hint: 'نحن نجلس بجوار المائدة وقربها لا فوقها.', explanation: '(على) تأتي أحيانًا بمعنى (عند) أو القرب.' },
-                        // الأسئلة الجديدة (٧) لتغطية معاني الملف المرفق
                         { id: 'srt14', text: 'سهرتُ <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">إلى</span> مطلعِ الفجرِ', options: ['النهاية في الزمان', 'النهاية في المكان', 'الاتجاه'], correct: 0, hint: 'الفجر يعبر عن وقت وليس مكاناً.', explanation: '(إلى) هنا تفيد النهاية في الزمان.' },
                         { id: 'srt15', text: 'يتفرعُ التعليمُ <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">إلى</span> ثلاثةِ أصنافٍ', options: ['التفصيل والتقسيم', 'المكان', 'الزمان'], correct: 0, hint: 'الكلمة تتجزأ إلى عدة أقسام.', explanation: '(إلى) تفيد هنا التفصيل.' },
                         { id: 'srt16', text: 'أعفو عنكَ <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">على</span> أن تُحسّنَ سلوكَكَ', options: ['الشرط', 'معنى (رغم)', 'الوجوب'], correct: 0, hint: 'يوجد عقد والتزام متبادل لحدوث العفو.', explanation: '(على) هنا تفيد الشرط.' },
@@ -173,7 +168,6 @@
                     type: 'mcq',
                     description: 'تحديات لغوية دقيقة تختبر فهمك العميق لأسرار حروف الجر.',
                     questions: [
-                        // الأسئلة السابقة (٨)
                         { id: 'm1', text: 'ما معنى اللام في: "اللهمَّ اغفر لـنا ولوالدينا"؟', options: ['الدعاء بالخير', 'الملكية', 'التعليل'], correct: 0, hint: 'طلب الخير لشخصٍ ما.', explanation: 'اللام تستخدم للدعاء بالخير.' },
                         { id: 'm2', text: 'ما معنى (على) في: "دعا المظلومُ على مَن ظلمَهُ"؟', options: ['الدعاء بالشر', 'الاستعلاء', 'الرغم'], correct: 0, hint: 'طلب السوء لشخصٍ ما.', explanation: '(على) تستخدم للدعاء بالشر.' },
                         { id: 'm3', text: 'ماذا تفيد الباء في: "ليسَ النجاحُ بـمستحيلٍ"؟', options: ['تأكيد النفي', 'الوسيلة', 'السببية'], correct: 0, hint: 'جاءت لتقوية معنى النفي بـ (ليس).', explanation: 'الباء الزائدة تفيد تأكيد النفي.' },
@@ -182,7 +176,6 @@
                         { id: 'm6', text: 'ما معنى (عن) في: "لا تجزي نفسٌ عن نفسٍ شيئًا"؟', options: ['البدلية (العِوض)', 'البعد', 'الموضوع'], correct: 0, hint: 'أي: لا تقوم مقامها أو بدلًا منها.', explanation: '(عَنْ) تأتي بمعنى البدل.' },
                         { id: 'm7', text: 'ما معنى اللام في: "للأطفالِ أن يلعبوا في الساحةِ"؟', options: ['الإباحة (السماح)', 'الملكية', 'السببية'], correct: 0, hint: 'تعطي إذنًا بالقيام بالفعل.', explanation: 'اللام تفيد الإباحة والسماح.' },
                         { id: 'm8', text: 'ما معنى (على) في: "على المديونِ مائةُ دينارٍ"؟', options: ['الشيء المكروه (الدَّين)', 'الوجوب', 'الاستعلاء'], correct: 0, hint: 'تستخدم مع الديون والأعباء.', explanation: '(على) تفيد التحمل أو الدَّين.' },
-                        // الأسئلة الجديدة (٦) لتغطية معاني الملف المرفق
                         { id: 'm9', text: 'ما دلالة (من) في: "جازى الأستاذُ مَن فازَ من الطلابِ"؟', options: ['توضيح (الموصولتين أو ما)', 'التبعيض', 'مكان الابتداء'], correct: 0, hint: 'جاءت لتبين المقصود بالاسم الموصول (مَن).', explanation: '(من) هنا توضح وتبيّن الموصول قبلها.' },
                         { id: 'm10', text: 'ما دلالة (من) في: "طالعتُ ما اشتريتُ من الكتبِ"؟', options: ['توضيح اسم نكرة', 'مصدر الشيء', 'تأكيد النفي'], correct: 0, hint: 'تزيل الإبهام عن نكرة سابقة.', explanation: 'حسب السياق، تفيد توضيح اسم نكرة.' },
                         { id: 'm11', text: 'ما دلالة (من) في: "أجيبُ مَن تسألني من التلميذاتِ"؟', options: ['التفصيل', 'زمان الابتداء', 'سبب الشيء'], correct: 0, hint: 'توضح وتفصّل الفئة المعنية.', explanation: '(من) هنا تفيد التفصيل.' },
@@ -198,7 +191,6 @@
                     noShuffle: true,
                     description: 'التحدي الختامي: المقارنة بين المحسوس والمعنوي لترسيخ الفروق الدقيقة.',
                     questions: [
-                        // الأسئلة السابقة (٨)
                         { id: 'p1a', text: 'هذه السيارةُ <span class="text-pastel-primaryDark font-black">لـ</span>جاري. اللام هنا تفيد:', options: ['الملكية المادية', 'الملكية المعنوية', 'التعليل'], correct: 0, hint: 'السيارة شيءٌ ماديٌّ ملموسٌ.', explanation: 'اللام للملكية المادية.' },
                         { id: 'p1b', text: '<span class="text-pastel-primaryDark font-black">لـ</span>لحريةِ ثمنٌ غالٍ. ماذا تفيد اللام هنا؟', options: ['الملكية المادية', 'الملكية المعنوية (الاختصاص)', 'السبب'], correct: 1, hint: 'ثمن الحرية قيمةٌ معنويةٌ.', explanation: 'اللام للملكية المعنوية أو الاختصاص.' },
                         { id: 'p2a', text: 'نظرتُ <span class="text-pastel-primaryDark font-black bg-blue-50 px-2 rounded">إلى</span> البحرِ. "إلى" تفيد:', options: ['الاتجاه حسًّا', 'الاتجاه معنًى', 'الزمان'], correct: 0, hint: 'اتجاه النظر نحو البحر، وليس بالضرورة "انتهاء" شيء عند البحر.', explanation: '(إلى) تفيد الاتجاه (حسًّا)، وهو التوجّه نحو شيء ملموس دون التأكيد على الوصول.' },
@@ -222,12 +214,6 @@
                 const header = document.getElementById('page-header');
                 const targetY = header ? header.offsetHeight : 0;
                 window.scrollTo({ top: targetY, behavior: 'smooth' });
-            });
-        }
-
-        function scrollToTop() {
-            requestAnimationFrame(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
 
@@ -293,15 +279,30 @@
         function updateProgressBar() {
             const bar = document.getElementById('progress-bar');
             const sec = appData.sections[activeSectionIndex];
-            let percent = (sec.type === 'info') ? 100 : (sec.type === 'mcq' ? (sec.questions.filter(q => state.mcq.answers[q.id] !== undefined).length / sec.questions.length) * 100 : (state.sort.currentItemIdx / sec.items.length) * 100);
-            bar.style.width = `${percent}%`;
+            
+            // إخفاء شريط التقدم تماماً في تبويب المقدمة لأنه لا يحتوي على أسئلة
+            if (sec.type === 'info') {
+                bar.style.width = '0%';
+                bar.style.opacity = '0';
+            } else {
+                let percent = (sec.type === 'mcq' ? (sec.questions.filter(q => state.mcq.answers[q.id] !== undefined).length / sec.questions.length) * 100 : (state.sort.currentItemIdx / sec.items.length) * 100);
+                bar.style.width = `${percent}%`;
+                bar.style.opacity = '1';
+            }
         }
 
         function switchSection(idx, shouldScroll = false) {
             activeSectionIndex = idx;
             initSectionShuffle(appData.sections[idx].id);
-            renderTabs(true); renderContent(); updateFinalResultVisibility();
-            if (shouldScroll) setTimeout(scrollToTabs, 50);
+            renderTabs(false); renderContent(); updateFinalResultVisibility();
+            
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    if (shouldScroll) scrollToTabs();
+                    const activeTab = document.getElementById(`tab-btn-${appData.sections[idx].id}`);
+                    centerTabHorizontal(activeTab);
+                }, 50);
+            });
         }
 
         function checkSectionComplete(sectionId) {
@@ -429,7 +430,14 @@
                 sec.questions.forEach(q => { delete state.mcq.answers[q.id]; delete state.mcq.hints[q.id]; });
                 state.mcq.shuffled[sectionId] = null;
             }
-            initSectionShuffle(sectionId); renderTabs(); renderContent(); updateFinalResultVisibility(); setTimeout(() => scrollToTabs(), 50);
+            initSectionShuffle(sectionId); renderTabs(false); renderContent(); updateFinalResultVisibility(); 
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    scrollToTabs();
+                    const activeTab = document.getElementById(`tab-btn-${sectionId}`);
+                    centerTabHorizontal(activeTab);
+                }, 50);
+            });
         }
 
         function startOver() {
@@ -448,12 +456,18 @@
             
             activeSectionIndex = 0;
             initSectionShuffle(appData.sections[0].id);
-            renderTabs(true);
+            renderTabs(false);
             renderContent();
             updateFinalResultVisibility();
 
-            // تمرير لحظي حاسم لمستوى التبويبات مباشرة
-            scrollToTabs(); 
+            // تمرير لحظي حاسم لمستوى التبويبات مباشرة وتوسيط أفقي
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    scrollToTabs(); 
+                    const activeTab = document.getElementById(`tab-btn-${appData.sections[0].id}`);
+                    centerTabHorizontal(activeTab);
+                }, 50);
+            });
         }
 
         function shuffleArray(a) { let n = [...a]; for (let i = n.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [n[i], n[j]] = [n[j], n[i]]; } return n; }
