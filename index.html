@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العربية السهلة - معاني حروف الجر</title>
+    
+    <!-- Google Fonts: Readex Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Readex Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --header-offset: 9rem;
+        }
+
+        body {
+            font-family: 'Readex Pro', sans-serif;
+            background-color: #f8fafc;
+            /* منع القفز الافتراضي للمتصفح */
+            overflow-anchor: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* إخفاء شريط التمرير الأفقي للتبويبات مع بقاء التمرير فعالاً */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* التبويبات الثابتة العلوية */
+        .sticky-tabs-container {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* تقنية التمدد السلس للتلميحات والتغذية الراجعة */
+        .smooth-grid-expand {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .smooth-grid-expand.is-expanded {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+        .smooth-content {
+            overflow: hidden;
+        }
+
+        /* تأثيرات النقر للأزرار */
+        .interactive-btn {
+            transition: all 0.2s ease;
+        }
+        .interactive-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- الترويسة -->
+    <header class="pt-8 pb-4 w-full flex-shrink-0 flex flex-col items-center justify-center">
+        <a href="https://www.youtube.com/egysalah" target="_blank" class="flex items-center gap-2 hover:opacity-80 transition-opacity mb-1">
+            <h1 class="text-2xl font-bold text-slate-900">العربية السهلة</h1>
+            <!-- أيقونة يوتيوب نقية SVG -->
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="#FF0000">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+        </a>
+        <p class="text-lg font-bold text-slate-500">محمود صلاح</p>
+    </header>
+
+    <!-- شريط التبويبات والتقدم -->
+    <div id="stickyNav" class="sticky-tabs-container flex-shrink-0">
+        <nav class="py-1">
+            <div id="tabsWrapper" class="mx-auto w-max max-w-full px-4 overflow-x-auto no-scrollbar flex gap-3 items-center">
+                <!-- Tabs will be rendered here -->
+            </div>
+        </nav>
+        <div class="h-1 bg-slate-200 w-full relative">
+            <div id="progressBar" class="absolute right-0 top-0 h-full bg-indigo-600 transition-all duration-500" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- منطقة المحتوى الرئيسية -->
+    <main class="flex-grow w-full px-4 py-10">
+        <div class="w-full max-w-lg mx-auto">
+            <h2 id="sectionTitle" class="text-3xl font-bold text-center text-indigo-900 mb-8"></h2>
+            
+            <div id="contentRoot" class="space-y-6">
+                <!-- Content will be rendered here -->
+            </div>
+
+            <!-- لوحة النتيجة النهائية -->
+            <div id="globalResults" class="hidden mt-12 bg-white rounded-3xl p-8 shadow-xl border border-indigo-100 text-center">
+                <div class="w-20 h-20 mx-auto bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 class="text-3xl font-bold text-indigo-900 mb-3">إنجاز رائع!</h3>
+                <p class="text-xl text-slate-600 mb-6 leading-relaxed">لقد أكملت جميع التمارين لـ ٥٤ حالة من معاني حروف الجر.</p>
+                <div id="finalScoreText" class="text-6xl font-black text-indigo-600 mb-8"></div>
+                <button onclick="App.resetAll()" class="w-full py-4 bg-indigo-600 text-white text-xl font-bold rounded-2xl shadow-lg hover:bg-indigo-700 transition-colors interactive-btn">
+                    ابدأ من جديد
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- التذييل -->
+    <footer class="py-8 mt-auto text-center flex-shrink-0">
+        <a href="https://www.youtube.com/egysalah" target="_blank" class="text-sm text-slate-400 font-medium hover:text-indigo-500 transition-colors inline-block">
+            جميع الحقوق محفوظة لقناة العربية السهلة
+        </a>
+    </footer>
+
+    <script>
+        // --- Utils ---
+        const toAr = (num) => String(num).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+        
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        // --- Data: 54 Cases ---
+        const TABS = [
+            { id: 'intro', title: 'قبل أن نبدأ', icon: '✨' },
+            { id: 'g1', title: 'مِنْ وَإِلَى', icon: '📍' },
+            { id: 'g2', title: 'عَنْ وَعَلى', icon: '⚖️' },
+            { id: 'g3', title: 'فِي وَالبَاء', icon: '🧰' },
+            { id: 'g4', title: 'اللام وَالكاف', icon: '🔗' }
+        ];
+
+        const DB = {
+            intro: [
+                { t: "مِنْ", d: "للابتداء، التبعيض، والبيان.", i: "🌱" },
+                { t: "إِلَى", d: "للانتهاء والاتجاه.", i: "🏁" },
+                { t: "عَنْ", d: "للأبعاد، المجاوزة، والموضوع.", i: "🏹" },
+                { t: "عَلى", d: "للاستعلاء، الوجوب، والشرط.", i: "🏔️" },
+                { t: "فِي", d: "للظرفية بنوعيها والمعية.", i: "📦" },
+                { t: "البَاء", d: "للاستعانة، السبب، والتعويض.", i: "✒️" },
+                { t: "اللام", d: "للملكية، السبب، والغرض.", i: "🔑" },
+                { t: "الكاف", d: "للتمثيل والتشبيه.", i: "🖼️" }
+            ],
+            g1: [ // من (12) + إلى (7)
+                { q: "مشيت مِنْ المنزل إلى البحر.", h: "نقطة انطلاق مادية.", a: "مكان الابتداء", o: ["مكان الابتداء", "زمان الابتداء", "مصدر الشيء"], e: "المنزل يشير إلى بداية الغاية في المكان." },
+                { q: "شرعت في العمل مِنْ الأسبوع الماضي.", h: "نقطة انطلاق زمنية.", a: "زمان الابتداء", o: ["زمان الابتداء", "مكان الابتداء", "بيان النوع"], e: "الأسبوع يدل على بداية الغاية الزمانية." },
+                { q: "عندي مصحف مِنْ مكة.", h: "أصل ومنشأ.", a: "مصدر الشيء", o: ["مصدر الشيء", "التبعيض", "بيان النوع"], e: "مكة هي مصدر ومنشأ هذا المصحف." },
+                { q: "اشتكى المريض مِنْ الألم.", h: "العلة والدافع.", a: "سبب الشيء", o: ["سبب الشيء", "بيان النوع", "توضيح نكرة"], e: "الألم هو علة وسبب الشكوى." },
+                { q: "اشتريت قميصاً مِنْ قطن.", h: "المادة الخام.", a: "بيان النوع", o: ["بيان النوع", "مصدر الشيء", "تأكيد النفي"], e: "وضحت (مِنْ) المادة المصنوع منها القميص." },
+                { q: "جازى الأستاذ مَنْ فاز مِنْ الطلاب.", h: "بعد اسم موصول (مَنْ).", a: "توضيح الموصول", o: ["توضيح الموصول", "التفصيل", "توضيح نكرة"], e: "فسرت المقصود بالاسم الموصول (مَنْ)." },
+                { q: "طالعت ما اشتريت مِنْ الكتب.", h: "بعد اسم موصول (ما).", a: "توضيح الموصول", o: ["توضيح الموصول", "بيان النوع", "تأكيد النفي"], e: "وضحت ماهية الأشياء المقصودة بـ (ما)." },
+                { q: "طالعت كتاباً مِنْ كتب الأدب.", h: "بعد كلمة غير معرفة.", a: "توضيح اسم نكرة", o: ["توضيح اسم نكرة", "التبعيض", "التفصيل"], e: "خصصت ووضحت النكرة التي سبقتها." },
+                { q: "أجيب من تسألني مِنْ التلميذات.", h: "تفصيل بعد إجمال.", a: "التفصيل", o: ["التفصيل", "توضيح اسم نكرة", "بيان النوع"], e: "فصلت المقصودات بالجواب." },
+                { q: "أكلت قليلاً مِنْ العنب.", h: "جزء من كل.", a: "التبعيض", o: ["التبعيض", "بيان النوع", "مصدر الشيء"], e: "تفيد أخذ بعض الشيء وليس كله." },
+                { q: "ما على الشجرة مِنْ طائر.", h: "بعد أداة نفي.", a: "تأكيد النفي", o: ["تأكيد النفي", "تأكيد الاستفهام", "التبعيض"], e: "زائدة لتقوية وتوكيد النفي." },
+                { q: "هل رأيت مِنْ نبات في الصحراء؟", h: "بعد أداة استفهام.", a: "تأكيد الاستفهام", o: ["تأكيد الاستفهام", "تأكيد النفي", "التفصيل"], e: "زائدة لتقوية السؤال." },
+                { q: "العلم أنفع مِنْ المال.", h: "تفضيل.", a: "الربط في التفضيل", o: ["الربط في التفضيل", "سبب الشيء", "التبعيض"], e: "ربطت بين المفضل والمفضل عليه." },
+                { q: "وصلت إِلَى المدرسة باكراً.", h: "وجهة مكانية أخيرة.", a: "النهاية في المكان", o: ["النهاية في المكان", "النهاية في الزمان", "الاتجاه حساً"], e: "المدرسة هي انتهاء الغاية المكانية." },
+                { q: "سهرت إِلَى مطلع الفجر.", h: "وجهة زمانية أخيرة.", a: "النهاية في الزمان", o: ["النهاية في الزمان", "النهاية في المكان", "بمعنى قرب"], e: "الفجر هو انتهاء الغاية الزمانية." },
+                { q: "أريد الذهاب إِلَى المحطة.", h: "وجهة مادية نتحرك لها.", a: "الاتجاه حساً", o: ["الاتجاه حساً", "الاتجاه معنى", "التفصيل"], e: "المحطة مكان محسوس نتوجه إليه." },
+                { q: "هدتني نصيحتك إِلَى الصواب.", h: "وجهة مجردة وقيمة.", a: "الاتجاه معنى", o: ["الاتجاه معنى", "الاتجاه حساً", "بمعنى قرب"], e: "الصواب قيمة معنوية." },
+                { q: "يتفرع التعليم إِلَى ثلاثة أصناف.", h: "سرد أقسام.", a: "التفصيل", o: ["التفصيل", "الاتجاه معنى", "النهاية في المكان"], e: "استخدمت لتفصيل الأنواع." },
+                { q: "جلست إِلَى المائدة.", h: "مجاور لها.", a: "بمعنى (قرب)", o: ["بمعنى (قرب)", "الاتجاه حساً", "النهاية في المكان"], e: "تفيد المجاورة والقرب." }
+            ],
+            g2: [ // عن (5) + على (9)
+                { q: "سألت القادم عَنْ طريقه.", a: "البعد حساً", o: ["البعد حساً", "البعد معنى", "موضوع الكلام"], h: "تجاوز مادي للمسافة.", e: "الابتعاد عن الطريق محسوس." },
+                { q: "أبحث عَنْ حل للمشكلة.", a: "البعد معنى", o: ["البعد معنى", "البعد حساً", "الحال"], h: "تجاوز فكري.", e: "الحل أمر مجرد غير ملموس." },
+                { q: "سمعت الخبر عَنْ صديقي.", a: "مصدر الشيء", o: ["مصدر الشيء", "موضوع الكلام", "البعد معنى"], h: "الشخص الناقل.", e: "الصديق هو مصدر نقل المعلومة." },
+                { q: "سألتك عَنْ عملك.", a: "موضوع الكلام", o: ["موضوع الكلام", "مصدر الشيء", "الحال"], h: "المحور.", e: "العمل هو الموضوع الذي يدور حوله الحديث." },
+                { q: "فعلت ذلك عَنْ قصد.", a: "الحال", o: ["الحال", "موضوع الكلام", "السبب"], h: "كيف تم الفعل؟", e: "تصف الهيئة والنية." },
+                { q: "وقع الطائر عَلى الشجرة.", a: "المكان (استعلاء)", o: ["المكان (استعلاء)", "المكان (قرب)", "الوجوب"], h: "فوقها.", e: "استقرار الطائر فوق الغصن." },
+                { q: "جلسنا عَلى المائدة.", a: "المكان (قرب)", o: ["المكان (قرب)", "المكان (استعلاء)", "الشرط"], h: "بجانبها.", e: "المقصود الجلوس حول المائدة وقربها." },
+                { q: "عَلى المريض أن يعمل بالنصائح.", a: "الوجوب", o: ["الوجوب", "الشرط", "الاستعلاء"], h: "إلزام.", e: "أمر واجب وضروري." },
+                { q: "عَلى أبي مائة دينار.", a: "الشيء الذي لا رغبة فيه", o: ["الشيء الذي لا رغبة فيه", "الوجوب", "الاستعلاء"], h: "التزام ثقيل.", e: "الدين يقع بغير رغبة." },
+                { q: "دعا جدي عَلى رجل ظلمه.", a: "الدعاء بالشر", o: ["الدعاء بالشر", "الوجوب", "الشرط"], h: "طلب سوء.", e: "استخدمت لطلب الضرر." },
+                { q: "بقي جدي عَلى نشاطه.", a: "الحال", o: ["الحال", "الاستعلاء", "الشرط"], h: "وضعية مستمرة.", e: "تصف حالة النشاط المستمرة." },
+                { q: "أعفو عنك عَلى أن تُحسن سلوكك.", a: "الشرط", o: ["الشرط", "الوجوب", "معنى الوهم"], h: "بمقابل.", e: "العفو مشروط بتحسين السلوك." },
+                { q: "شرب الطفل الدواء عَلى أنه ماء.", a: "معنى الوهم", o: ["معنى الوهم", "معنى (رغم)", "الاستعلاء"], h: "ظن خاطئ.", e: "توهم الطفل أنه ماء." },
+                { q: "فاق صالح أقرانه عَلى صغر سنه.", a: "معنى (رغم)", o: ["معنى (رغم)", "الوجوب", "الاستعلاء"], h: "حدوث الفعل رغم العائق.", e: "النجاح حدث بالرغم من صغر السن." }
+            ],
+            g3: [ // في (5) + الباء (8) - Format: True/False and matching styles
+                { q: "رأيت غزالاً فِي الصحراء.", a: "المكان", o: ["المكان", "الزمان", "المعية"], h: "وعاء مكاني.", e: "الصحراء مكان الحدث." },
+                { q: "تجتمع الأسرة فِي المساء.", a: "الزمان", o: ["الزمان", "المكان", "الغرض"], h: "وعاء زماني.", e: "المساء وقت الاجتماع." },
+                { q: "مر الفارس فِي سرعة البرق.", a: "الحال", o: ["الحال", "الزمان", "المكان"], h: "هيئة وسرعة.", e: "تصف حالة الفارس." },
+                { q: "خرج الأستاذ فِي جمع من الأصدقاء.", a: "المعية", o: ["المعية", "الحال", "الغرض"], h: "بصحبة.", e: "برفقة الأصدقاء." },
+                { q: "غادرت المنامة فِي مهمة.", a: "الغرض", o: ["الغرض", "المعية", "الحال"], h: "الهدف والدافع.", e: "المهمة هي غاية السفر." },
+                { q: "قطعت الغصن بِالمنشار.", a: "الآلة", o: ["الآلة", "الوسيلة", "السبب"], h: "أداة صلبة.", e: "المنشار هو الآلة المستخدمة." },
+                { q: "تتسع ثقافة الإنسان بِالمطالعة.", a: "الوسيلة", o: ["الوسيلة", "الآلة", "الحال"], h: "طريقة معنوية.", e: "المطالعة وسيلة التثقف." },
+                { q: "سُر محمد بِقدوم أخيه.", a: "السبب", o: ["السبب", "الآلة", "التعويض الثمن"], h: "لماذا سر؟", e: "القدوم هو العلة." },
+                { q: "اشتريت هذا الكتاب بِدينار.", a: "التعويض الثمن", o: ["التعويض الثمن", "السبب", "الآلة"], h: "مقابل مالي.", e: "الدينار هو الثمن المدفوع." },
+                { q: "نزلنا بِمكان ظليل.", a: "المكان", o: ["المكان", "الحال", "الآلة"], h: "حيز جغرافي.", e: "تشير للموقع المادي." },
+                { q: "طالع التلميذ الدرس بِانتباه.", a: "الحال", o: ["الحال", "الوسيلة", "تأكيد النفي"], h: "هيئة الطالب.", e: "الانتباه هو الحالة النفسية." },
+                { q: "ما الأستاذ بِمقصر في عمله.", a: "تأكيد النفي", o: ["تأكيد النفي", "القسم", "السبب"], h: "بعد أداة نفي.", e: "لتقوية نفي التقصير." },
+                { q: "بِالله لأقولن الصدق.", a: "القسم", o: ["القسم", "الالتحام", "الآلة"], h: "حلف.", e: "للقسم والتوثيق." }
+            ],
+            g4: [ // اللام (6) + الكاف (2)
+                { q: "هذا المنزل لِأخي.", a: "الملكية المادية", o: ["الملكية المادية", "الملكية المعنوية", "السبب"], h: "بناء يملكه شخص.", e: "المنزل محسوس." },
+                { q: "لِلصلاة فوائد عظيمة.", a: "الملكية المعنوية", o: ["الملكية المعنوية", "الملكية المادية", "فائدة للمجرور"], h: "أشياء مجردة.", e: "الفوائد صفات معنوية." },
+                { q: "النصر لِلمظلوم.", a: "فائدة للمجرور", o: ["فائدة للمجرور", "السبب", "السماح"], h: "منفعة تُمنح.", e: "النصر حق ومنفعة." },
+                { q: "غاب التلميذ لِمرض أصابه.", a: "السبب", o: ["السبب", "الغرض", "الملكية المعنوية"], h: "العلة والدافع.", e: "المرض هو السبب." },
+                { q: "سافرت لِطلب العلم.", a: "الغرض", o: ["الغرض", "السبب", "السماح"], h: "الهدف المنشود.", e: "الطلب هو الغاية المرجوة." },
+                { q: "يسمح لِلأطفال أن يلعبوا.", a: "السماح", o: ["السماح", "فائدة للمجرور", "السبب"], h: "رخصة.", e: "أفادت إعطاء الإذن." },
+                { q: "انطلق المتسابق كَالسهم.", a: "التشبيه", o: ["التشبيه", "التفصيل", "السبب"], h: "مماثلة.", e: "شبه المتسابق بالسهم." },
+                { q: "زرت أماكن أثرية كَمسجد الخميس.", a: "التفصيل", o: ["التفصيل", "التشبيه", "السماح"], h: "ذكر مثال.", e: "ذكر نموذج من الأماكن." }
+            ]
+        };
+
+        // --- App Engine ---
+        const App = {
+            state: {
+                activeTab: 'intro',
+                answers: {}, // { g1: { 0: 'مكان الابتداء' } }
+                completed: new Set()
+            },
+
+            init() {
+                try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+                this.renderTabs();
+                this.renderContent();
+            },
+
+            renderTabs() {
+                const wrapper = document.getElementById('tabsWrapper');
+                let html = '';
+                
+                TABS.forEach(tab => {
+                    const isActive = this.state.activeTab === tab.id;
+                    const isDone = this.state.completed.has(tab.id);
+                    
+                    let cls = `flex items-center gap-2 px-5 py-2.5 rounded-full text-base font-bold whitespace-nowrap transition-all border-2 interactive-btn `;
+                    cls += isActive ? `bg-indigo-600 border-indigo-600 text-white shadow-md` : `bg-white border-slate-200 text-slate-500 hover:border-indigo-300`;
+
+                    html += `
+                        <button onclick="App.switchTab('${tab.id}')" id="btn-${tab.id}" class="${cls}">
+                            <span class="text-xl">${tab.icon}</span>
+                            <span>${tab.title}</span>
+                            ${isDone ? `<svg class="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>` : ''}
+                        </button>
+                    `;
+                });
+                
+                wrapper.innerHTML = html;
+
+                // Progress Bar
+                const prog = document.getElementById('progressBar');
+                if (this.state.activeTab === 'intro') {
+                    prog.style.width = '0%';
+                } else {
+                    const totalQs = DB[this.state.activeTab].length;
+                    const ansQs = Object.keys(this.state.answers[this.state.activeTab] || {}).length;
+                    prog.style.width = `${(ansQs / totalQs) * 100}%`;
+                }
+            },
+
+            switchTab(tabId) {
+                this.state.activeTab = tabId;
+                this.renderTabs();
+                this.renderContent();
+                
+                // Scroll Horizontal
+                const btn = document.getElementById(`btn-${tabId}`);
+                const container = document.getElementById('tabsWrapper');
+                if (btn && container) {
+                    const offset = btn.offsetLeft - (container.offsetWidth / 2) + (btn.offsetWidth / 2);
+                    container.scrollBy({ left: offset, behavior: 'smooth' });
+                }
+
+                // Scroll Vertical
+                const stickyNavHeight = document.getElementById('stickyNav').offsetHeight;
+                window.scrollTo({ top: stickyNavHeight, behavior: 'smooth' });
+            },
+
+            renderContent() {
+                const root = document.getElementById('contentRoot');
+                const titleEl = document.getElementById('sectionTitle');
+                const tabData = TABS.find(t => t.id === this.state.activeTab);
+                
+                titleEl.innerText = tabData.title;
+                document.getElementById('globalResults').classList.add('hidden');
+
+                if (this.state.activeTab === 'intro') {
+                    this.renderIntro(root);
+                } else {
+                    this.renderQuiz(root, this.state.activeTab);
+                }
+                
+                this.checkGlobal();
+            },
+
+            renderIntro(container) {
+                const items = DB.intro;
+                let html = `
+                    <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-slate-200">
+                        <p class="text-xl text-slate-600 mb-8 leading-relaxed text-right">أهلاً بك! قمنا بتجميع وتلخيص <span class="font-bold text-indigo-600">٥٤ معنى نحوي</span> لحروف الجر. هذا التطبيق التفاعلي سيساعدك على التمييز بينها بسهولة.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                `;
+                
+                items.forEach(item => {
+                    html += `
+                        <div class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+                            <span class="text-3xl shrink-0">${item.i}</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-indigo-900">${item.t}</h3>
+                                <p class="text-slate-500 text-sm mt-1">${item.d}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                        <button onclick="App.switchTab('g1')" class="w-full mt-10 py-5 bg-indigo-600 text-white text-xl font-bold rounded-2xl shadow-xl hover:bg-indigo-700 transition-colors interactive-btn">
+                            انطلق للتحدي الأول
+                        </button>
+                    </div>
+                `;
+                container.innerHTML = html;
+            },
+
+            renderQuiz(container, tabId) {
+                const qs = DB[tabId];
+                const userAns = this.state.answers[tabId] || {};
+                
+                let html = '';
+                
+                qs.forEach((q, idx) => {
+                    const hasAns = userAns[idx] !== undefined;
+                    const chosen = userAns[idx];
+                    const isCorrect = chosen === q.a;
+                    
+                    if (!q._opts) q._opts = shuffle([...q.o]);
+
+                    html += `
+                        <div class="bg-white rounded-[2rem] p-6 md:p-8 shadow-sm border border-slate-200">
+                            <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+                                <span class="text-slate-400 font-bold text-lg">السؤال ${toAr(idx + 1)}</span>
+                                <button onclick="App.toggleHint('hint-${idx}')" class="text-amber-500 font-bold flex items-center gap-2 bg-amber-50 px-4 py-1.5 rounded-full hover:bg-amber-100 transition-colors">
+                                    💡 تلميح
+                                </button>
+                            </div>
+
+                            <div id="hint-${idx}" class="smooth-grid-expand mb-5">
+                                <div class="smooth-content">
+                                    <div class="p-4 bg-amber-50 text-amber-800 rounded-2xl border border-amber-200 font-medium text-lg">
+                                        👉 ${q.h}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-slate-800 leading-snug mb-6 text-right">${q.q}</h3>
+                            
+                            <div class="grid gap-3">
+                    `;
+
+                    q._opts.forEach((opt, oIdx) => {
+                        let btnCls = "interactive-btn w-full text-right p-4 rounded-xl text-xl font-medium border-2 flex items-center gap-4 ";
+                        
+                        if (!hasAns) {
+                            btnCls += "border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50 text-slate-700 cursor-pointer";
+                        } else {
+                            if (opt === q.a) {
+                                btnCls += "border-green-500 bg-green-50 text-green-900";
+                            } else if (opt === chosen && !isCorrect) {
+                                btnCls += "border-red-400 bg-red-50 text-red-900";
+                            } else {
+                                btnCls += "border-slate-100 bg-slate-50 text-slate-400 opacity-50 cursor-default";
+                            }
+                        }
+
+                        html += `
+                            <button ${hasAns ? 'disabled' : ''} onclick="App.submitAns('${tabId}', ${idx}, '${opt}')" class="${btnCls}">
+                                <span class="w-9 h-9 flex items-center justify-center bg-white rounded-lg shadow-sm text-indigo-600 shrink-0 font-bold text-base">${toAr(oIdx + 1)}</span>
+                                <span>${opt}</span>
+                            </button>
+                        `;
+                    });
+
+                    html += `
+                            </div>
+                            
+                            <div id="feed-${idx}" class="smooth-grid-expand ${hasAns ? 'is-expanded' : ''} mt-6">
+                                <div class="smooth-content">
+                                    <div class="p-5 rounded-2xl ${hasAns && isCorrect ? 'bg-green-100 text-green-900 border border-green-200' : 'bg-red-50 text-red-900 border border-red-200'}">
+                                        <p class="font-bold text-xl mb-1 flex items-center gap-2">
+                                            ${hasAns && isCorrect ? '✅ إجابة صحيحة' : '❌ إجابة خاطئة'}
+                                        </p>
+                                        <p class="text-lg opacity-90 mt-2">${q.e}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Section Results
+                if (Object.keys(userAns).length === qs.length) {
+                    this.state.completed.add(tabId);
+                    
+                    let correctCount = 0;
+                    for (let key in userAns) { if (userAns[key] === qs[key].a) correctCount++; }
+
+                    html += `
+                        <div class="bg-indigo-900 text-white rounded-[2rem] p-10 text-center shadow-xl mt-8">
+                            <h4 class="text-2xl font-bold mb-3 opacity-80">النتيجة</h4>
+                            <p class="text-6xl font-black mb-8">${toAr(correctCount)} <span class="text-3xl opacity-70">/ ${toAr(qs.length)}</span></p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onclick="App.retryTab('${tabId}')" class="px-8 py-4 bg-white/10 hover:bg-white/20 rounded-2xl font-bold text-xl transition-colors">إعادة القسم</button>
+                                ${tabId !== 'g4' ? `
+                                    <button onclick="App.nextTab()" class="px-8 py-4 bg-white text-indigo-900 hover:bg-indigo-50 rounded-2xl font-bold text-xl shadow-lg transition-colors">القسم التالي 👈</button>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                container.innerHTML = html;
+            },
+
+            toggleHint(id) {
+                const el = document.getElementById(id);
+                if(el) el.classList.toggle('is-expanded');
+            },
+
+            submitAns(tabId, qIdx, opt) {
+                if (!this.state.answers[tabId]) this.state.answers[tabId] = {};
+                this.state.answers[tabId][qIdx] = opt;
+                
+                this.renderTabs();
+                this.renderContent();
+            },
+
+            retryTab(tabId) {
+                delete this.state.answers[tabId];
+                this.state.completed.delete(tabId);
+                DB[tabId].forEach(q => delete q._opts);
+                
+                this.renderTabs();
+                this.renderContent();
+                
+                const stickyNavHeight = document.getElementById('stickyNav').offsetHeight;
+                window.scrollTo({ top: stickyNavHeight, behavior: 'smooth' });
+            },
+
+            nextTab() {
+                const idx = TABS.findIndex(t => t.id === this.state.activeTab);
+                if (idx < TABS.length - 1) this.switchTab(TABS[idx + 1].id);
+            },
+
+            checkGlobal() {
+                const qTabs = TABS.filter(t => t.id !== 'intro');
+                const allDone = qTabs.every(t => this.state.completed.has(t.id));
+                const board = document.getElementById('globalResults');
+
+                if (allDone) {
+                    let s = 0, t = 0;
+                    qTabs.forEach(tab => {
+                        const ans = this.state.answers[tab.id] || {};
+                        const qs = DB[tab.id];
+                        t += qs.length;
+                        for (let k in ans) { if (ans[k] === qs[k].a) s++; }
+                    });
+
+                    document.getElementById('finalScoreText').innerText = `${toAr(s)} / ${toAr(t)}`;
+                    board.classList.remove('hidden');
+                }
+            },
+
+            resetAll() {
+                this.state.answers = {};
+                this.state.completed.clear();
+                Object.keys(DB).forEach(k => {
+                    if (Array.isArray(DB[k])) DB[k].forEach(q => delete q._opts);
+                });
+                this.switchTab('intro');
+            }
+        };
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            App.init();
+        });
+    </script>
+</body>
+</html>
+
+
