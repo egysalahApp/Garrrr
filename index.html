@@ -95,6 +95,7 @@
                     type: "intro",
                     title: "قبل أن نبدأ",
                     theme: "slate",
+                    description: "تتنوع معاني حروف الجر في لغتنا الجميلة حسب السياق. دعنا نتعرف على أبرزها بأسلوبٍ ممتعٍ:",
                     content: [
                         { title: "🧭 المكان والاتجاه", text: "مِن (البداية)، إلَى (النهاية)، فِي (الظرفية)، عَلَى (الاستعلاء).", icon: ICONS.scene, theme: "blue" },
                         { title: "⏱️ الزمان", text: "مِن، وإلَى، وفِي تُستخدم أيضًا للدلالة على الأوقات.", icon: ICONS.refresh, theme: "emerald" },
@@ -107,6 +108,7 @@
                     type: "mcq",
                     title: "الكلمة المفقودة",
                     theme: "emerald",
+                    description: "اختر حرف الجر المناسب لملء الفراغِ ليعطي المعنى المطلوب بدقةٍ.",
                     questions: [
                         { text: 'خاتمُ المعلمِ مصنوعٌ [ ... ] فضةٍ. (بيان النوع)', options: ['مِنْ', 'فِي', 'بـِ'], correct: 0, hint: 'نحتاج حرفًا يبين المادة الخام.', explanation: '(مِنْ) تستخدم لبيان النوع والمادة المصنوع منها الشيء.' },
                         { text: 'السفرُ أحبُّ [ ... ] من البقاءِ. (بمعنى عندي)', options: ['إلَيَّ', 'عَلَيَّ', 'فِيَّ'], correct: 0, hint: 'نحتاج حرفًا يفيد معنى (عند).', explanation: '(إلَى) تستخدم أحيانًا بمعنى (عند).' },
@@ -135,6 +137,7 @@
                     type: "sort",
                     title: "فرز البطاقات",
                     theme: "purple",
+                    description: "اختر الصندوق المناسب للمعنى الذي يؤديه الحرف الملون.",
                     questions: [
                         { text: 'شرّبت الأمُ ولدها الدواء <span class="text-blue-700 font-bold bg-blue-100 px-2 py-0.5 rounded-md leading-relaxed">على</span> أنه ماء', options: ['معنى الوهم', 'الاستعلاء', 'الشرط'], correct: 0, hint: 'تصوير شيءٍ غير حقيقيٍ.', explanation: '(عَلَى) تفيد هنا التوهم.' },
                         { text: '<span class="text-blue-700 font-bold">بـ</span>سم الله الرحمن الرحيم', options: ['الاستعانة', 'القسم', 'السبب'], correct: 0, hint: 'طلب العون لعمل شيءٍ.', explanation: 'الباء هنا للاستعانة والوسيلة.' },
@@ -165,6 +168,7 @@
                     type: "mcq",
                     title: "أسرار المعاني",
                     theme: "amber",
+                    description: "تحديات لغوية دقيقة تختبر فهمك العميق لأسرار حروف الجر.",
                     questions: [
                         { text: 'ما معنى اللام في: "اللهمَّ اغفر لـنا ولوالدينا"؟', options: ['الدعاء بالخير', 'الملكية', 'التعليل'], correct: 0, hint: 'طلب الخير لشخصٍ ما.', explanation: 'اللام تستخدم للدعاء بالخير.' },
                         { text: 'ما معنى (على) في: "دعا المظلومُ على مَن ظلمَهُ"؟', options: ['الدعاء بالشر', 'الاستعلاء', 'الرغم'], correct: 0, hint: 'طلب السوء لشخصٍ ما.', explanation: '(على) تستخدم للدعاء بالشر.' },
@@ -186,6 +190,7 @@
                     type: "mcq",
                     title: "البحث الدقيق",
                     theme: "rose",
+                    description: "تحدي الدقة لترسيخ الفهم.",
                     questions: [
                         { text: 'هذه السيارةُ <span class="text-blue-700 font-bold">لـ</span>جاري. اللام هنا تفيد:', options: ['الملكية المادية', 'الملكية المعنوية', 'التعليل'], correct: 0, hint: 'امتلاك شيء ماديّ (السيارة).', explanation: 'اللام للملكية المادية.' },
                         { text: '<span class="text-blue-700 font-bold">لـ</span>لحريةِ ثمنٌ غالٍ. ماذا تفيد اللام هنا؟', options: ['الملكية المادية', 'الملكية المعنوية', 'السبب'], correct: 1, hint: 'امتلاك شيء معنوي (ثمن الحرية قيمةٌ معنويةٌ).', explanation: 'اللام للملكية المعنوية.' },
@@ -203,6 +208,7 @@
                     type: "classify",
                     title: "صناديق المعاني",
                     theme: "blue",
+                    description: "التحدي الشامل: معانٍ متطابقة لحروف مختلفة! اقرأ الجملة وضعها في الصندوق المناسب.",
                     categories: [
                         { id: 'cat0', label: 'السببية والتعليل', theme: 'emerald' },
                         { id: 'cat1', label: 'التفصيل', theme: 'purple' },
@@ -363,7 +369,7 @@
                         </div>
                     </div>
                     
-                    <main class="container mx-auto px-4 pb-8 max-w-4xl flex-grow">
+                    <main class="container mx-auto px-4 pb-8 max-w-4xl flex-grow min-h-[75vh]">
                         <div id="scroll-target"></div>
                         <h1 class="text-center text-2xl md:text-3xl font-semibold text-slate-600 pt-6 mb-6 bg-transparent">
                             ${APP_DATA.pageTitle.split('|')[0]}
@@ -448,6 +454,17 @@
 
             renderIntro(sectionData) {
                 let blocksHTML = '';
+                
+                if (sectionData.description) {
+                    blocksHTML += `
+                        <div class="text-center mb-8 fade-in">
+                            <p class="text-xl md:text-2xl text-slate-700 font-semibold leading-relaxed bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+                                ${sectionData.description}
+                            </p>
+                        </div>
+                    `;
+                }
+
                 sectionData.content.forEach(block => {
                     blocksHTML += `
                         <div class="bg-white p-6 md:p-8 rounded-2xl border-2 border-${block.theme}-100 shadow-sm flex flex-col md:flex-row items-start text-right gap-4 md:gap-6">
@@ -480,6 +497,16 @@
                 const questions = this.state.sectionData[sectionId];
                 
                 let html = '<div class="fade-in">';
+
+                if (sectionData.description) {
+                    html += `
+                        <div class="text-center mb-8">
+                            <p class="text-lg md:text-xl text-${sectionData.theme}-800 font-semibold bg-${sectionData.theme}-50 p-4 md:p-5 rounded-2xl border border-${sectionData.theme}-200 shadow-sm inline-block w-full">
+                                ${sectionData.description}
+                            </p>
+                        </div>
+                    `;
+                }
                 
                 questions.forEach((qState, idx) => {
                     html += `<div id="${sectionId}-wrapper-${idx}">`;
@@ -698,7 +725,17 @@
                     `;
                 });
 
-                html += `<div class="flex flex-col items-center w-full gap-6">`;
+                html += `<div class="flex flex-col items-center w-full gap-6 fade-in">`;
+                
+                if (sectionData.description) {
+                    html += `
+                        <div class="text-center w-full">
+                            <p class="text-lg md:text-xl text-${theme}-800 font-semibold bg-${theme}-50 p-4 md:p-5 rounded-2xl border border-${theme}-200 shadow-sm">
+                                ${sectionData.description}
+                            </p>
+                        </div>
+                    `;
+                }
 
                 // بناء حاوية الكارت العلوي
                 html += `
@@ -797,7 +834,17 @@
                     });
                 }
 
-                html += `<div class="flex flex-col items-center w-full gap-6">`;
+                html += `<div class="flex flex-col items-center w-full gap-6 fade-in">`;
+                
+                if (sectionData.description) {
+                    html += `
+                        <div class="text-center w-full">
+                            <p class="text-lg md:text-xl text-${theme}-800 font-semibold bg-${theme}-50 p-4 md:p-5 rounded-2xl border border-${theme}-200 shadow-sm">
+                                ${sectionData.description}
+                            </p>
+                        </div>
+                    `;
+                }
 
                 // بناء حاوية الكارت العلوي
                 html += `
