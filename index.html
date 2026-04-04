@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العربية السهلة | معاني حروف الجر</title>
+    <title>معاني حروف الجر | العربية السهلة</title>
     
     <!-- خط Readex Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,7 +83,7 @@
 
         // ================= قاعدة البيانات المركزية (APP_DATA) =================
         const APP_DATA = {
-            pageTitle: "العربية السهلة | معاني حروف الجر",
+            pageTitle: "معاني حروف الجر | العربية السهلة",
             headerTitle: "العربية السهلة",
             headerSubtitle: "محمود صلاح",
             youtubeLink: "https://www.youtube.com/egysalah",
@@ -372,7 +372,7 @@
                     <main class="container mx-auto px-4 pb-8 max-w-4xl flex-grow min-h-[75vh]">
                         <div id="scroll-target"></div>
                         <h1 class="text-center text-2xl md:text-3xl font-semibold text-slate-700 pt-6 mb-6 bg-transparent">
-                            ${APP_DATA.pageTitle.split('|')[1]}
+                            ${APP_DATA.pageTitle.split('|')[0]}
                         </h1>
 
                         ${sectionsContainers}
@@ -468,14 +468,9 @@
                 let gridHTML = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full fade-in">';
                 sectionData.content.forEach(block => {
                     gridHTML += `
-                        <div class="bg-${block.theme}-50 p-6 rounded-3xl border-2 border-${block.theme}-200 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 flex flex-col gap-4 group cursor-default">
-                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                                <div class="bg-white p-4 rounded-2xl shrink-0 shadow-sm border border-${block.theme}-100 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 flex items-center justify-center">
-                                    ${block.icon || ''}
-                                </div>
-                                <h3 class="text-2xl md:text-3xl font-bold text-${block.theme}-800 leading-snug">${block.title}</h3>
-                            </div>
-                            <p class="text-lg md:text-xl font-medium text-slate-700 leading-relaxed bg-white/60 p-5 rounded-2xl border border-${block.theme}-100 flex-grow shadow-sm text-right">${block.text}</p>
+                        <div class="bg-${block.theme}-50 p-6 md:p-8 rounded-3xl border-2 border-${block.theme}-200 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 flex flex-col gap-4 group cursor-default">
+                            <h3 class="text-2xl md:text-3xl font-bold text-${block.theme}-800 leading-snug text-center w-full group-hover:scale-105 transition-transform duration-300">${block.title}</h3>
+                            <p class="text-lg md:text-xl font-medium text-slate-700 leading-relaxed bg-white/60 p-5 rounded-2xl border border-${block.theme}-100 flex-grow shadow-sm text-center">${block.text}</p>
                         </div>
                     `;
                 });
