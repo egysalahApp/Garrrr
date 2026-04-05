@@ -59,7 +59,7 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="selection:bg-violet-200 flex flex-col min-h-screen">
+<body class="selection:bg-violet-200 flex flex-col min-h-[100dvh]">
 
     <!-- حاوية التطبيق الرئيسية -->
     <div id="app-root" class="flex-grow flex flex-col"></div>
@@ -700,7 +700,7 @@
                     
                     // استعراض البطاقات التي وُضعت مسبقاً داخل هذا الصندوق
                     const placedHtml = placedItems[cat.id].map(item => 
-                        `<div class="mt-2 p-3 rounded-lg text-sm md:text-base font-semibold border border-${boxTheme}-100 bg-white shadow-sm leading-snug fade-in text-right text-slate-700">
+                        `<div class="mt-2 p-3 rounded-lg text-lg md:text-xl font-semibold border border-${boxTheme}-100 bg-white shadow-sm leading-snug fade-in text-right text-slate-700">
                             ${item.text}
                         </div>`
                     ).join('');
