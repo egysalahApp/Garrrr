@@ -97,10 +97,10 @@
                     theme: "sky",
                     description: "تتنوع معاني حروف الجر في لغتنا الجميلة حسب السياق. دعنا نستنتج أبرزها بأسلوبٍ ممتع",
                     content: [
-                        { title: "🧭 المكان والاتجاه", text: "مِن (البداية)، إلَى (النهاية)، فِي (الظرفية)، عَلَى (الاستعلاء).", icon: ICONS.scene, theme: "blue" },
-                        { title: "⏱️ الزمان", text: "مِن، وإلَى، وفِي تُستخدم أيضًا للدلالة على الأوقات.", icon: ICONS.refresh, theme: "emerald" },
-                        { title: "⚙️ الآلة والوسيلة", text: "الباء تفيد الآلة (ماديًّا)، أو الوسيلة (معنويًّا كالعلم).", icon: ICONS.hidden, theme: "amber" },
-                        { title: "🔍 التشبيه والتفصيل", text: "الكاف تُستخدم للتشبيه وتأتي لضرب الأمثلة (التفصيل).", icon: ICONS.loud, theme: "purple" }
+                        { title: "🧭 المكان والاتجاه", text: "مِن (البداية)، إلَى (النهاية)، فِي (الظرفية)، عَلَى (الاستعلاء).", theme: "blue" },
+                        { title: "⏱️ الزمان", text: "مِن، وإلَى، وفِي تُستخدم أيضًا للدلالة على الأوقات.", theme: "emerald" },
+                        { title: "⚙️ الآلة والوسيلة", text: "الباء تفيد الآلة (ماديًّا)، أو الوسيلة (معنويًّا كالعلم).", theme: "amber" },
+                        { title: "🔍 التشبيه والتفصيل", text: "الكاف تُستخدم للتشبيه وتأتي لضرب الأمثلة (التفصيل).", theme: "purple" }
                     ]
                 },
                 {
@@ -189,7 +189,7 @@
                     id: "search",
                     type: "mcq",
                     title: "البحث الدقيق",
-                    theme: "rose",
+                    theme: "indigo",
                     description: "تحدي الدقة لترسيخ الفهم.",
                     questions: [
                         { text: 'هذه السيارةُ <span class="text-blue-700">لـ</span>جاري. اللام هنا تفيد:', options: ['الملكية المادية', 'الملكية المعنوية', 'التعليل'], correct: 0, hint: 'امتلاك شيء ماديّ (السيارة).', explanation: 'اللام للملكية المادية.' },
@@ -817,7 +817,7 @@
                 // بناء أزرار الخيارات السفلية
                 let boxesHTML = '';
                 if (!isComplete) {
-                    const colors = ['emerald', 'purple', 'amber', 'blue', 'rose'];
+                    const colors = ['emerald', 'purple', 'amber', 'blue', 'indigo'];
                     currentQState.options.forEach((opt, idx) => {
                         const boxTheme = colors[idx % colors.length];
                         let btnClass = `flex-1 flex flex-col items-center justify-center p-3 md:p-5 border-2 md:border-4 rounded-xl md:rounded-2xl transition-all duration-300 border-${boxTheme}-200 text-${boxTheme}-700 bg-${boxTheme}-50 `;
