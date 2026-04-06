@@ -100,7 +100,7 @@
                         { title: "🧭 المكان والاتجاه", text: "مِن (البداية)، إلَى (النهاية)، فِي (الظرفية)، عَلَى (الاستعلاء).", theme: "blue" },
                         { title: "⏱️ الزمان", text: "مِن، وإلَى، وفِي تُستخدم أيضًا للدلالة على الأوقات.", theme: "emerald" },
                         { title: "⚙️ الآلة والوسيلة", text: "الباء تفيد الآلة (ماديًّا)، أو الوسيلة (معنويًّا كالعلم).", theme: "amber" },
-                        { title: "🔍 التشبيه والتفصيل", text: "الكاف تُستخدم للتشبيه وتأتي لضرب الأمثلة (التفصيل).", theme: "purple" }
+                        { title: "🔍 التشبيه والتفصيل", text: "الكاف تُستخدم للتشبيه وتأتي لضرب الأمثلة (التفصيل).", theme: "violet" }
                     ]
                 },
                 {
@@ -136,7 +136,7 @@
                     id: "sort",
                     type: "sort",
                     title: "فرز البطاقات",
-                    theme: "purple",
+                    theme: "violet",
                     description: "اختر الصندوق المناسب للمعنى الذي يؤديه الحرف الملون.",
                     questions: [
                         { text: 'شرّبت الأمُ ولدها الدواء <span class="text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md leading-relaxed">على</span> أنه ماء', options: ['معنى الوهم', 'الاستعلاء', 'الشرط'], correct: 0, hint: 'تصوير شيءٍ غير حقيقيٍ.', explanation: '(عَلَى) تفيد هنا التوهم.' },
@@ -211,7 +211,7 @@
                     description: "التحدي الشامل: معانٍ متطابقة لحروف مختلفة! اقرأ الجملة وضعها في الصندوق المناسب.",
                     categories: [
                         { id: 'cat0', label: 'السببية والتعليل', theme: 'emerald' },
-                        { id: 'cat1', label: 'التفصيل', theme: 'purple' },
+                        { id: 'cat1', label: 'التفصيل', theme: 'violet' },
                         { id: 'cat2', label: 'الحال', theme: 'amber' },
                         { id: 'cat3', label: 'مصدر الشيء', theme: 'cyan' }
                     ],
@@ -817,7 +817,7 @@
                 // بناء أزرار الخيارات السفلية
                 let boxesHTML = '';
                 if (!isComplete) {
-                    const colors = ['emerald', 'purple', 'amber', 'blue', 'indigo'];
+                    const colors = ['emerald', 'violet', 'amber', 'blue', 'indigo'];
                     currentQState.options.forEach((opt, idx) => {
                         const boxTheme = colors[idx % colors.length];
                         let btnClass = `flex-1 flex flex-col items-center justify-center p-3 md:p-5 border-2 md:border-4 rounded-xl md:rounded-2xl transition-all duration-300 border-${boxTheme}-200 text-${boxTheme}-700 bg-${boxTheme}-50 `;
